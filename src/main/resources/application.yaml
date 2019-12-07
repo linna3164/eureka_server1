@@ -1,0 +1,19 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    #  是否将自己注册到Eureka Server，默认为true。 如果不想注册到server 设置为false
+    register-with-eureka: true
+    # 是否从Eureka Server获取注册信息，默认为true。
+    serviceUrl:
+      # service-url 是一个Map 大家不要直接陪在service-url后面会报错
+      defaultZone: http://localhost:8761/eureka/
+      # 具体的大家可以去看下 EurekaClientConfigBean 可以按住CMD然后点击service-url（windows应该是ctrl）
+
+server:
+  # 应用端口 Eureka默认端口是8761 我们就用8761吧
+  port: 8761
+spring:
+  application:
+    # 应用名称
+    name: eurekaserver
